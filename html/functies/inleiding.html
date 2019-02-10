@@ -1,0 +1,110 @@
+<h2>Functies</h2>
+<h4>Inleiding</h4>
+<p>Heel vaak moeten we op veel plaatsen in het script een vergelijkbare actie uitvoeren.<br>
+    We moeten bijvoorbeeld een mooi bericht weergeven wanneer een bezoeker inlogt, uitlogt en misschien ergens anders.<br>
+    Functies zijn de belangrijkste "bouwstenen" van het programma. Ze zorgen ervoor dat de code vele malen kan worden
+    gebruikt zonder letterlijk de code te herhalen.</p>
+<p>Enkele voordelen van het gebruik van functies:</p>
+<ul>
+    <li>Efficiëntere code</li>
+    <li>Herbruikbaar</li>
+    <li>Elimineert dubbele code</li>
+    <li>Grotere problemen oplossen door kleinere problemen op te lossen</li>
+    <li>Grotere problemen opdelen in kleinere eenheden</li>
+    <li>Er bestaan built-in functies zoals alert(...), Math.round(...)</li>
+</ul>
+<p>Een functie declaratie ziet er als volgt uit
+    <pre>
+    function functionname(par1, par2, ..., parx) {
+        statements
+    };
+    </pre>
+    Eerst is er het sleutelwoord
+    <code>function</code>, dan volgt de naam van de functie, gevolgd door een lijst van parameters tussen (). Deze
+    lijst
+    mag eventueel leeg zijn.
+    Tenslotte is er de code van de functie (de function body), tussen {}. <br>
+    De functie wordt uitgevoerd, door de functie aan te roepen
+    <pre>
+    functionname(arg1, arg2, ..., argx);
+    </pre>
+    Een functie kan een waarde retourneren.
+</p>
+<pre class="editor" id="editor1">
+function getAvatar(points) {
+    let avatar;
+    if (points < 100) {
+        avatar = 'Mouse';
+    } else if (points < 1000) {
+        avatar = 'Cat';
+    } else {
+        avatar = 'Gorilla';
+    }
+    return avatar;
+}
+const myAvatar = getAvatar(335); 
+console.log(`my avatar : ${myAvatar}`); //Cat
+</pre>
+<p>Oefening</p>
+<ul>
+    <li>Schrijf een functie die n! berekent, waarbij n meegegeven wordt als parameter.<br>
+        Bijvoorbeeld 5! = 5 * 4 * 3 * 2 * 1 = 120. <br>
+        Roep deze functie op met verschillende parameters
+    </li>
+</ul>
+<pre class="editor" id="editor2">
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening1" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening1">
+    <div class="card card-body">
+        <pre class="editor" id="editor3">
+function faculteit(n) {
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+console.log(faculteit(5));
+        </pre>
+    </div>
+</div>
+<p>Oefening</p>
+<ul>
+    <li>v-perfecte getallen zijn strikt positieve gehele getallen waarvan de som van de positieve delers
+        gelijk is aan een veelvoud v van het getal zelf.
+        Een voorbeeld van een 3-perfect getal is 120. De som van alle delers van 120, namelijk
+        1+2+3+4+5+6+8+10+12+15+20+24+30+40+60+120=360 is immers gelijk aan 3 maal 120 <br>
+        Schrijf een functie die retourneert of een getal een v-perfect getal is of niet.<br>
+        Als het een v-perfect getal is, wordt de waarde van v geretourneerd, anders false
+    </li>
+</ul>
+<pre class="editor" id="editor4">
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening2" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening2">
+    <div class="card card-body">
+        <pre class="editor" id="editor5">
+function vperfect(getal) {
+    let somDelers = 0;
+    for (let i = 1; i <= getal; i++) {
+        if ((getal % i) === 0) somDelers += i;
+    }
+    return (somDelers % getal) === 0 ? somDelers / getal : false;
+}
+
+console.log(vperfect(120));     // 3
+console.log(vperfect(121));     // false
+            </pre>
+    </div>
+</div>

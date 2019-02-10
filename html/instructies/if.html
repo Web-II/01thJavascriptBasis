@@ -1,0 +1,156 @@
+<h2>Instructies</h2>
+<h4>if: als ... dan ...</h4>
+<p>if</p>
+<p>In het geval van 1 instructie mag {} weggelaten worden</p>
+<pre class="editor" id="editor1">
+let scoops = 2;
+if (scoops < 3) {
+    console.log('Ice cream is running low!');
+} 
+</pre>
+<p>if ... else ...</p>
+<pre class="editor" id="editor2">
+let scoops = 4;
+if (scoops < 3) {
+    console.log('Ice cream is running low!');
+}
+else if (scoops > 9){
+    console.log('Eat faster, the ice cream is going to melt!');    
+}       
+</pre>
+<p>Nog meer keuzes ...</p>
+<pre class="editor" id="editor3">
+let scoops = 5;
+if (scoops == 3) {
+    console.log('Ice cream is running low!');
+} else if (scoops > 9) {
+    console.log('Eat faster, the ice cream is going to melt!');
+} else if (scoops == 2) {
+    console.log('Going once!');
+} else if (scoops == 1) {
+    console.log('Going twice!');
+} else if (scoops == 0) {
+    console.log('Gone!');
+} else {
+    console.log('Still lots of ice cream left, come and get it.');
+}     
+</pre>
+<img src="../../images/ice.png">
+<p>switch</p>
+<pre class="editor" id="editor4">
+const theDay = new Date().getDay();
+switch (theDay){
+    case 5:
+        console.log('Finally Friday');
+        break;
+    case 6:
+        console.log('Super Saturday');
+        break;
+    case 0:
+        console.log('Sleepy Sunday');
+        break;
+    default:
+        console.log("I'm really looking forward to this weekend!");
+} 
+</pre>
+<img src="../../images/weekend.png">
+<p>Oefening</p>
+<ul>
+    <li>Zal "Hello" getoond worden?
+        <pre>
+if ("0") {
+    console.log("Hello");
+}
+</pre>
+    </li>
+</ul>
+<pre class="editor" id="editor5">
+
+
+</pre>
+<ul>
+    <li>Schrijf een begroeting naar de console. Als het voor 10 uur is: goede morgen, als het tussen 10 en 20 uur is:
+        goeidag, anders: goeieavond</li>
+</ul>
+<pre class="editor" id="editor6">
+
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening1" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening1">
+    <div class="card card-body">
+        <pre class="editor" id="editor7">
+const nu = new Date().getHours();
+if (nu < 10){
+    console.log("Goede morgen");
+}
+else if (nu < 20) {
+    console.log("Goeiedag");
+}
+else {
+    console.log("Goeieavond");
+}
+</pre>
+    </div>
+</div>
+<ul>
+    <li>Vraag aan een gebruiker het aantal huisdieren en geef alnaargelang het antwoord een aangepaste melding
+        <ul>
+            <li>0 dieren: Geen dierenvriend?</li>
+            <li>1 dier: Is het beestje niet eenzaam?</li>
+            <li>2 dieren: Komen ze een beetje overeen?</li>
+            <li>3 dieren: Leuke bende!</li>
+            <li>4 dieren: Gezellige beestenboel</li>
+            <li>5 .. 10 dieren: Amai, wie geeft dat allemaal te eten?</li>
+            <li>meer dan 10 dieren: Dat is precies een asiel</li>
+        </ul>
+    </li>
+</ul>
+<pre class="editor" id="editor8">
+let aantalDieren = parseInt(prompt("Hoeveel huisdieren heb je?"));
+
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening2" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening2">
+    <div class="card card-body">
+        <pre class="editor" id="editor9">
+let aantalDieren = parseInt(prompt("Hoeveel huisdieren heb je?"));
+switch (aantalDieren){
+    case 0:
+        alert('Geen dierenvriend?');
+        break;
+    case 1:
+        alert('Is het beestje niet eenzaam?');
+        break;
+    case 2:
+        alert('Komen ze een beetje overeen?');
+        break;
+    case 3:
+        alert('Leuke bende!');
+        break;
+    case 4:
+        alert('Gezellige beestenboel');
+        break;
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+        alert('Amai, wie geeft dat allemaal te eten?');
+        break;
+    default:
+        alert('Dat is precies een asiel');
+    }
+</pre>
+    </div>
+</div>

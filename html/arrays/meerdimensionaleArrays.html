@@ -1,0 +1,33 @@
+<h2>Arrays</h2>
+<h4>Meerdimensionale arrays</h4>
+<ul>
+    <li>Een array van een array = 2 dimensionale array</li>
+    <li>Een array van een array van een array = 3 dimensionale array</li>
+    <li>Arrays zijn dynamisch! Je geeft geen grootte op bij instantiatie. Ze kunnen groeien/krimpen</li>
+    <li>Een array wordt in JavaScript genoteerd met []</li>
+</ul>
+<p>Voorbeeld: een array die de kaarten van 2 poker hands bevat</p>
+<pre class="editor" id="editor1">
+const hands = [];
+hands[0] = [5,'A',3,'J',3];
+hands[1] = [7,'K',3,'J',3];
+console.log ('2de kaart, 2de hand : ' + hands[1][1]);
+</pre>
+<p>Voorbeeld 2D array: Een schaakbord, voorgesteld als een 2 dimensionele array van strings. <br>De eerste zet
+    verplaatst 'p' van positie (6,4) naar (4,4). 6,4 wordt op blanco geplaatst</p>
+<pre class="editor" id="editor2">
+const board = [
+['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
+['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r']];
+    
+console.log(board.join('\n') + '\n\n');
+board[4][4] = board[6][4]; // Move King's Pawn forward 2
+board[6][4] = ' ';
+console.log(board.join('\n'));
+</pre>

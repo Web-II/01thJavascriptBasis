@@ -1,0 +1,263 @@
+<h2>Datatypes</h2>
+<h4>number</h4>
+<p>Het primitieve datatype number heeft de volgende kenmerken:</p>
+<ul>
+    <li>Alle getallen (zowel gehele als floating point getallen) worden bijgehouden als <b>64 bit floating point
+            getallen</b></li>
+    <li>Er is geen apart integer type (in tegenstelling tot Java waar er verschillende datatypes zijn voor getallen)</li>
+    <li>Dit formaat is gevoelig voor afrondingsfouten</li>
+    <li>Integer literals
+        <ul>
+            <li>Decimaal: 3, 10, ...</li>
+            <li>Hexadecimaal: begint met 0X of OX: oxff</li>
+            <li>Octaal: begint met O: 0377</li>
+        </ul>
+    </li>
+    <li>Floating point literals
+        <ul>
+            <li>[digits][.digits][(E|e)[(+|-)]digits]</li>
+            <li>Voorbeelden: 3.14; 2345.789; .33333333333333, 6.02e23</li>
+            <li>Octaal: begint met O: 0377</li>
+        </ul>
+    </li>
+    <li>Operatoren: +, -, *, /, %</li>
+</ul>
+<pre class="editor" id="editor1">
+const a = 1; // geheel getal
+console.log(typeof a); // number
+
+const b = 1.5; // kommagetal
+console.log(typeof b); // number
+
+const c = 070; // integer (in octal) 
+const d = 0xffff; // integer (in hex)
+const e = 1.34e6; // Scientific Notation (1340000) 
+const f = 10.0; // geheel getal (optimization)  
+</pre>
+<ul>
+    <li>Alle getallen zijn floating point getallen</li>
+    <li>Er is geen apart integer type (in tegenstelling tot Java waar er verschillende datatypes zijn voor getallen)</li>
+    <li>Dit formaat is gevoelig voor afrondingsfouten</li>
+    <li>Integer literals
+        <ul>
+            <li>Cijfers na de komma niet 100% juist</li>
+            <li>Accuraat tot 17 cijfers na de komma</li>
+            <li>Octaal: begint met O: 0377</li>
+        </ul>
+    </li>
+</ul>
+<p>Enkele voorbeelden:</p>
+<pre class="editor" id="editor2">
+const i = 0.1;
+const j = 0.2;
+let z = i+j;
+console.log('z = ' + z);   
+console.log('Oplossing 1');
+z = (i * 10 + j * 10)/10;
+console.log('z = ' + z);   
+console.log('Oplossing 2 --> Let op! z is van het type string');
+z = (i + j).toFixed(1);
+console.log('z = ' + z); 
+</pre>
+<p>Oefening</p>
+<ul>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>5 / 0;</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>5 / "bob";</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>6 / "2";</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>3 + "bob";</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>3 * "bob";</pre>
+    </li>
+</ul>
+<pre class="editor" id="editor3">
+
+
+</pre>
+<p>Speciale waarden en bijhorende functions</p>
+<ul>
+    <li>NaN (Not a Number)
+        <ul>
+            <li>Stelt geen getal voor (iets is geen getal)</li>
+            <li>De waarde die sommige standaardfuncties teruggeven als ze als invoer een getal verwachten en dit niet
+                krijgen</li>
+            <li>isNan() : functie die detecteert of een waarde NaN is</li>
+        </ul>
+    </li>
+    <li>Infinity
+        <ul>
+            <li>stelt overflow voor</li>
+            <li>Een berekening die een getal retourneert buiten het waardenbereik, retourneert Infinity (positief) of
+                –Infinity (negatief).</li>
+            <li>De functie isFinite() retourneert true als parameter binnen waardenbereik ligt</li>
+        </ul>
+    </li>
+</ul>
+<p>Enkele voorbeelden:</p>
+<pre class="editor" id="editor4">
+const fail = 10 / "zero"; 
+console.log(fail); //   NaN (Not a Number)
+console.log(isNaN(fail)); // true
+console.log(isNaN(10)); // false
+console.log(isNaN('10')); // false
+console.log(isNaN('blabla')); // true
+console.log(isNaN(true)); // false
+console.log(1.7976931348623157e+308 * 1000); //  Infinity
+console.log(1.7976931348623157e+308 * -1000); // - Infinity
+console.log(10 / 0); // Infinity
+console.log(isFinite(123)); // true
+</pre>
+<p>Oefening</p>
+<ul>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>NaN == NaN</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>typeof NaN;</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>isNaN(NaN);</pre>
+    </li>
+</ul>
+<pre class="editor" id="editor5">
+
+
+</pre>
+<p>Functies voor Conversies</p>
+<ul>
+    <li>parseInt(): converteert string naar geheel getal (eerste beduidende positie moet +,- of getal zijn)</li>
+    <li>parseFloat() : converteert string naar floating point</li>
+    <li>Beide doen dit tot ze het eerste ongeldige karakter tegenkomen</li>
+    <li>De constructor Number() (type-casting) : zet een waarde om in een getal (base-10). Bij een ongeldig karakter
+        retourneert hij NaN</li>
+</ul>
+<pre class="editor" id="editor6">
+console.log(parseInt('1234numbers')); // 1234
+console.log(parseInt('$1234')); // NaN
+console.log(parseInt('22.5')); // 22
+console.log(parseFloat('1234numbers')); // 1234
+console.log(parseFloat('$12.34')); // NaN
+console.log(parseFloat('22.34.15')); // 22.34
+console.log(parseFloat('22.5')); // 22.5   
+</pre>
+<p>Het objecttype Number</p>
+<ul>
+    <li>Prototype voor een object van type number (zie later)</li>
+    <li>Voegt gedrag toe aan de primitieve datatypes</li>
+    <li>JavaScript past impliciete conversie toe : het primitieve getal wordt automatisch omgezet naar een Number
+        object als je een methode van Number oproept</li>
+    <li>Instance methodes
+        <ul>
+            <li>toFixed(x): afronden tot x cijfers na de komma</li>
+            <li>toString(x) : string representatie, x is de radix, default 10</li>
+        </ul>
+    </li>
+    <li>Properties
+        <ul>
+            <li>Number.MIN_VALUE: constante voor kleinste getal (5e-324)</li>
+            <li>Number.MAX_VALUE: grootste getal (-1.7976931348623157e+308)</li>
+            <li>Number.NaN : idem als Nan, maar Property van Number</li>
+        </ul>
+    </li>
+</ul>
+<pre class="editor" id="editor7">
+console.log(12345.6789.toFixed(1)); // "12345.7"
+console.log((17).toString(2)); // 10001
+console.log(Number.MIN_VALUE); // 5e-324
+console.log(Number.MAX_VALUE); // 1.7976931348623157e+308 
+console.log(Number.POSITIVE_INFINITY); // Infinity
+console.log(Number.NEGATIVE_INFINITY); // -Infinity  
+</pre>
+<p>Math object voor berekeningen</p>
+<ul>
+    <li>is een ingebouwd object, een JavaScript base class</li>
+    <li>Bevat enkel static properties en methods</li>
+    <li>Math.round(), Math.trunc() : afronden of afkappen</li>
+    <li>Math.max(), Math.min() : grootste/kleinste getal</li>
+    <li>Math.random() : pseudo random getal tussen 0 (incl) en 1(excl)</li>
+    <li>Meer op https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math</li>
+</ul>
+<pre class="editor" id="editor8">
+console.log(Math.round(200.6)); // 201
+console.log(Math.max(200, 1000, 4)); // 1000
+console.log(Math.min(200, 1000, 4)); // 4
+console.log(Math.random()); //getal tussen 0 en 1 
+</pre>
+<p>Oefening</p>
+<ul>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>Math.pow(2, 3);</pre>
+    </li>
+    <li>Bereken de omtrek van een cirkel met straal 10. Rond af op 3 cijfers na de komma</li>
+</ul>
+<pre class="editor" id="editor9">
+
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening1" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening1">
+    <div class="card card-body">
+        <pre class="editor" id="editor10">
+const straal = 10;
+const omtrek = 2 * Math.PI * straal;
+console.log('Omtrek van een cirkel met straal ' + straal + ' is ' + omtrek.toFixed(3)); 
+</pre>
+    </div>
+</div>
+<p>Oefening</p>
+<ul>
+    <li>Genereer een random waarde voor een dobbelsteen</li>
+</ul>
+<pre class="editor" id="editor11">
+
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening2" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening2">
+    <div class="card card-body">
+        <pre class="editor" id="editor12">
+const dobbelsteenWaarde = Math.floor(Math.random() * 6) + 1;
+console.log('dobbelsteenWaarde is ' + dobbelsteenWaarde); 
+</pre>
+    </div>
+</div>
+<p>Oefening</p>
+<ul>
+    <li>4 kinderen verdelen 5 appels en 6 peren onder elkaar. Hoeveel (gehele) stukken fruit krijgt elk kind?</li>
+</ul>
+<pre class="editor" id="editor13">
+
+
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening3" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening3">
+    <div class="card card-body">
+        <pre class="editor" id="editor14">
+const aantalAppels = 5;
+const aantalPeren = 6;
+const aantalKinderen = 4;
+const aantalStukkenPerKind = Math.floor((aantalAppels + aantalPeren) / aantalKinderen);
+console.log('Aantal stukken fruit per kind ' + aantalStukkenPerKind); 
+</pre>
+    </div>
+</div>

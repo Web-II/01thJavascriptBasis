@@ -1,0 +1,85 @@
+<h2>Variabelen</h2>
+<h4>var</h4>
+<p>In ES 5 kan je ook het var keyword gebruiken voor de declaratie van een variabele.</p>
+<p>Er wordt dan gebruik gemaakt van het sleutelwoord <b>var</b> om een constante te declareren</p>
+<pre><code>var variabeleNaam = initiële waarde</code></pre>
+<p>Er zijn een aantal nadelen aan verbonden aan het gebruik van var</p>
+<ul>
+    <li>var kan opnieuw gedeclareerd worden binnen dezelfde scope</li>
+    <li>Er is <b>function</b> scope. Dit is heel erg verschillend van block scope. Dit wil zeggen dat
+        de variabele binnen de functie beschikbaar is (ook voor alle blokken in de functie). Als een
+        var niet binnen een functie gedefinieerd is dan is krijgt deze globale scope (in een web
+        applicatie is dit het window object)</li>
+</ul>
+<p>Een aantal voorbeelden:</p>
+<pre class="editor" id="editor1">
+console.log("Gebruik van var");
+var width;
+console.log('width = ' + width);    // undefined
+var height = 300;
+
+function bar() {
+    if (true) {
+        var width = 200;
+    }
+    console.log('width in bar = ' + width); // 200
+}
+
+bar();
+console.log('width = ' + width);    // undefined
+console.log('height = ' + height);  // 300
+// opnieuw declareren geeft geen syntaxfout
+var width = 20;
+
+</pre>
+<pre class="editor" id="editor2">
+console.log("Gebruik van let");
+let width;
+console.log('width = ' + width);    // undefined
+let height = 300;
+function bar() {
+    if (true) {
+        let width = 200;
+    }
+    console.log('width in bar = ' + width); // 200
+}
+bar();
+console.log('width = ' + width);    // undefined
+console.log('height = ' + height);  // 300
+</pre>
+<p>Best practice:</p>
+<ul>
+    <li>Gebruik altijd const</li>
+    <li>Gebruik let enkel als de variabele geüpdatet moet worden</li>
+    <li>Gebruik nooit var, tenzij voor compatibility issues met IE11</li>
+</ul>
+
+<p>Oefening</p>
+<ul>
+    <li>Probeer eerst zelf te bedenken wat er in elk van de volgende gevallen zal worden weggeschreven naar de console</li>
+</ul>
+<pre class="editor" id="editor3">
+if (true) {
+    var x = 1;
+ }
+ console.log(x);
+ 
+ for (var i = 0; i < 10; i++ ) {
+   // do stuff with i
+ }
+ console.log(i); 
+</pre>
+
+<pre class="editor" id="editor4">
+if (true) {
+    const x = 1;
+ }
+ console.log(x);
+</pre>
+
+<pre class="editor" id="editor5">
+ for (let i = 0; i < 10; i++ ) {
+   // do stuff with i
+ }
+ console.log(i); 
+</pre>

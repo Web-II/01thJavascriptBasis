@@ -1,0 +1,40 @@
+<h2>Datatypes</h2>
+<h4>undefined</h4>
+<p>De speciale waarde undefined staat voor een onbekende waarde</p>
+<ul>
+    <li>Een variabele waaraan nog geen waarde is toegekend bevat de waarde undefined</li>
+    <li>Een functie zonder return instructie, retourneert undefined</li>
+    <li>undefined evalueert <b>false</b> in een boolean expressie</li>
+</ul>
+<pre class="editor" id="editor1">
+let a;
+console.log(a); // undefined
+if (a) {
+    console.log("a is true");
+    //deze code wordt niet uitgevoerd, evalueert false
+}
+// OF 
+if (a !== undefined) {
+    console.log("a !== undefined");
+    //deze code wordt niet uitgevoerd, evalueert false
+}
+// OF 
+if (a == undefined) {
+    console.log("a == undefined");
+    //deze code wordt uitgevoerd, evalueert true
+}
+</pre>
+<p>Oefening</p>
+<ul>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>
+if (!undefined) {
+    console.log('This syntax is weird …');
+}
+        </pre>
+    </li>
+</ul>
+<pre class="editor" id="editor2">
+
+
+</pre>
