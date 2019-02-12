@@ -1,7 +1,7 @@
 <h2>Datatypes</h2>
 <h4>date</h4>
-<p>Houdt datums bij in milliseconden sinds 1/1/1970 UTC</p>
-<p>Kan datums bijhouden 285.616 jaren ervoor en erna</p>
+<p>Houdt datums bij in milliseconden sinds 1/1/1970 UTC.</p>
+<p>Kan datums bijhouden 285.616 jaren ervoor en erna.</p>
 <ul>
     <li>Creatie datum
         <ul>
@@ -11,31 +11,36 @@
     </li>
     <li>Methodes
         <ul>
-            <li>getDate : returnt dag van de maand</li>
+            <li>getDate() : returnt dag van de maand</li>
             <li>getMonth() : start vanaf 0!!!!!!! (0-11)</li>
             <li>getFullYear()</li>
             <li>getHours() (0-23), getMinutes() (0-59), getSeconds() (0-59)</li>
-            <li>getDay : dag in de week (0-6)</li>                                                
+            <li>getDay() : dag in de week (0-6)</li>                                                
         </ul>
     </li>
+    <li>Meer op <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Mozilla Reference Date</a></li>
 </ul>
-<div class="input-group mb-3">
-    <textarea class="form-control code">
-            const today = new Date();
-            console.log(today); 
-            console.log(today.getFullYear()); 
-            console.log(today.getMonth()); //(start vanaf 0!!!)
-            console.log(today.getDate()); 
-            console.log(today.getHours()); 
-            console.log(today.getMinutes()); 
-            console.log(today.getSeconds()); 
-            console.log(today.getDay());             
-    </textarea>
-</div>
-<p>Methodes</p>
-<div class="input-group mb-3">
-        <textarea class="form-control code">
-            const date = new Date(); // bevat de huidige datum/tijd
-            const date = new Date(1954,11,14,5,34,0,0); // jaar (4pos), maand (begint vanaf 0!, dus waarde tussen 0 en 11), dag, uren, minuten, sec, msec)                         
-        </textarea>
-    </div>
+<pre class="editor" id="editor1">
+        const today = new Date(); // bevat de huidige datum/tijd
+        console.log(today); 
+        console.log(today.getFullYear()); 
+        console.log(today.getMonth()); //(start vanaf 0!!!)
+        console.log(today.getDate()); 
+        console.log(today.getHours()); 
+        console.log(today.getMinutes()); 
+        console.log(today.getSeconds()); 
+        console.log(today.getDay());
+
+</pre>
+<pre class="editor" id="editor2">
+        const date = new Date(1954,11,14,5,34,0,0); // jaar (4pos), maand (begint vanaf 0!, dus waarde tussen 0 en 11), dag, uren, minuten, sec, msec)                         
+        console.log(date); 
+        console.log(date.getFullYear()); 
+        console.log(date.getMonth()); //(start vanaf 0!!!)
+        console.log(date.getDate()); 
+        console.log(date.getHours()); 
+        console.log(date.getMinutes()); 
+        console.log(date.getSeconds()); 
+        console.log(date.getDay());
+
+</pre>

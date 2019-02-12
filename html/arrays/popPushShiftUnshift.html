@@ -2,7 +2,7 @@
 <h4>Operaties</h4>
 <p>Pop, push, shift en unshift:</p>
 <ul>
-    <li><b>pop</b>: verwijdert het <b>laatste</b> element uit de array en returnt dit
+    <li><b>pop</b>: verwijdert het <b>laatste</b> element uit de array en retourneert dit
         <pre class="editor" id="editor1">
         const pizzas = ['Margherita', 'Mushroom', 'Spinach & Rocket'];
         let element = pizzas.pop(); // 'Spinach & Rocket'
@@ -10,7 +10,7 @@
         </pre>
         <img src="images/pizzasPop.png">
     </li>
-    <li><b>push</b>: voegt één of meerdere waarden toe aan het einde van de array en returnt de nieuwe lengte van de
+    <li><b>push</b>: voegt één of meerdere waarden toe aan het einde van de array en retourneert de nieuwe lengte van de
         array.
         <pre class="editor" id="editor2">
 const pizzas = ['Margherita', 'Mushroom'];
@@ -19,7 +19,7 @@ console.log(lengthPizzas);
 </pre>
         <img src="images/pizzasPush.png">
     </li>
-    <li><b>shift</b>: verwijdert de <b>eerste</b> waarde in array en returnt deze .
+    <li><b>shift</b>: verwijdert de <b>eerste</b> waarde in array en retourneert deze .
         <pre class="editor" id="editor3">
 const pizzas = ['Margherita', 'Mushroom', 'Pepperoni'];
 let element = pizzas.shift(); // 'Margherita' 
@@ -27,7 +27,7 @@ console.log(element);
 </pre>
         <img src="images/pizzasShift.png">
     </li>
-    <li><b>unshift</b>: voegt één of meerdere waarden toe aan het begin van het array en returnt de nieuwe lengte van
+    <li><b>unshift</b>: voegt één of meerdere waarden toe aan het begin van het array en retourneert de nieuwe lengte van
         de array. .
         <pre class="editor" id="editor4">
 const pizzas = ['Mushroom', 'Pepperoni'];
@@ -64,8 +64,9 @@ console.log(lengthPizzas);
 let styles = ["Jazz", "Blues"];
 styles.push("Rock-n-Roll");
 styles[Math.floor((styles.length - 1) / 2)] = "Classics";
-console.log(styles.shift());
+styles.shift();
 styles.unshift("Rap", "Reggae");
+console.log(styles);
 </pre>
     </div>
 </div>
@@ -102,9 +103,9 @@ console.log(resultaat);
 </div>
 <p>Oefening</p>
 <ul>
-    <li>Schrijf een functie sumInput die de gebruiker gehele getallen vraagt via prompt en deze in een array stopt</li>
-    <li>Dit wordt herhaald tot de gebruiker niets ingeeft of op Cancel klikt</li>
-    <li>Schrijf de getallen en de som van alle getallen uit naar de console</li>
+    <li>Schrijf een functie sumInput die de gebruiker gehele getallen vraagt via prompt en deze in een array stopt.</li>
+    <li>Dit wordt herhaald tot de gebruiker niets ingeeft of op Cancel klikt.</li>
+    <li>Schrijf de getallen en de som van alle getallen uit naar de console.</li>
 </ul>
 <pre class="editor" id="editor9">
 
@@ -133,10 +134,12 @@ function sumInput() {
 sumInput();
 </pre>
     </div>
+    </div>
+
     <p><b>indexOf</b>. Met behulp van indexOf kan je zoeken of een waarde voorkomt in een array. De functie indexOf
-        retourneert de index van het eerste voorkomen of -1 als de waarde niet voorkomt</p>
+        retourneert de index van het eerste voorkomen of -1 als de waarde niet voorkomt.</p>
     <pre class="editor" id="editor11">
-const pizzas = ['Margherita', 'Mushroom', 'Spinach & Rocket];
+const pizzas = ['Margherita', 'Mushroom', 'Spinach & Rocket'];
 pizzas.indexOf('Spicy Beef'); //  -1
 pizzas.indexOf('Margherita'); // 0    
 </pre>

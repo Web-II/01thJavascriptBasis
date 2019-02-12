@@ -14,11 +14,11 @@
 let pizzas = [];
         </pre>
     </li>
-    <li>Arrays zijn dynamisch (je dient het aantal elementen in de array niet op voorhand te definiëren! Een array kan
-        groeien en krimpen!)</li>
-    <li>Je dient ook het type van de elementen in de array niet op te geven. De elementen zijn mogelijks van een
-        verschillende type</li>
-    <li>Plaatsen van mogelijke waarden (mogelijks van verschillende types) in een array
+    <li>Arrays zijn dynamisch (je dient het aantal elementen in de array niet op voorhand te definiëren). Een array kan
+        groeien en krimpen!</li>
+    <li>Je dient ook het type van de elementen in de array niet op te geven. De elementen mogen van een
+        verschillende type zijn.</li>
+    <li>Waarde toekennen (mogen verschillende types zijn) aan een array.
         <pre class="editor" id="editor2">
 let pizzas = [];
 pizzas[0] = 'Margherita';
@@ -31,13 +31,12 @@ pizzas[0] = 'Ham & Pineapple';
     <li>Aanmaken van een array via array literal
         <pre class="editor" id="editor3">
 let pizzas = ['Margherita', 'Mushroom', 'Spinach & Rocket', 'Pineapple & Sweetcorn'];
-// De elementen in een array hoeven helemaal niet van hetzelfde type te zijn
 let mixedArray = [null, 1, 'two', true, undefined ];           
         </pre>
     </li>
     <li>Opvragen van 1 element aan de hand van de index
         <ul>
-            <li>Index start vanaf 0. Gebruik []</li>
+            <li>Index start van 0. Gebruik []</li>
             <li>length : aantal elementen in array</li>
         </ul>
         <pre class="editor" id="editor4">
@@ -47,14 +46,14 @@ console.log(`eerste pizza ${pizzas[0]}`); //Margherita
 console.log(`laatste pizza ${pizzas[pizzas.length-1]}`); //Pineapple & Sweetcorn
         </pre>
     </li>
-    <li>Je kan ook de volledige array afprinten
+    <li>Je kan ook de volledige array weergeven
         <pre class="editor" id="editor5">
 const pizzas = ['Margherita', 'Mushroom', 'Spinach & Rocket', 'Pineapple & Sweetcorn'];        
 console.log(pizzas); // Array(4) ['Margherita', 'Mushroom', 'Spinach & Rocket', 'Pineapple & Sweetcorn']; 
         </pre>
     </li>
     <li>Verwijderen van een element in de array<br>
-        Verwijdert de waarde op deze positie, maar de ruimte bestaat nog steeds en bevat dan de waarde <b>undefined</b>.
+        <b>delete</b> verwijdert de waarde op deze positie, maar de ruimte bestaat nog steeds en bevat dan de waarde <b>undefined</b>.
         <pre class="editor" id="editor6">
 const pizzas = ['Margherita', 'Mushroom', 'Spinach & Rocket', 'Pineapple & Sweetcorn'];     
 delete pizzas[2];   
@@ -104,7 +103,7 @@ console.log(pizzas[20]); // undefined
         </pre>
     </li>
     <li>Creëer een array met de volgende elementen: "bob", 23, false</li>
-    <li>Schrijf het laatste element uit van
+    <li>Geef het laatste element van de volgende array in de console.
         <pre>
         let dieren = ["paard", "varken", "koe"];
         </pre>
@@ -121,7 +120,7 @@ console.log(pizzas[20]); // undefined
         console.log(b);
         </pre>
     </li>
-    <li>Overloop de volledige array en concateneer alles tot 1 string. Schrijf de string uit.
+    <li>Overloop de volledige array en concateneer alles tot 1 string. Geef de string weer in de console.
         <pre>
         let words = ["teenage", "mutant", "ninja", "turtles"];
         </pre>

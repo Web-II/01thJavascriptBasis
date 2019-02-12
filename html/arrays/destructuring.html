@@ -1,6 +1,6 @@
 <h2>Arrays</h2>
 <h4>Destructuring</h4>
-<p>Destructuring is een manier om meerdere waarden te extraheren uit een array en toe te kennen aan variabelen</p>
+<p>Destructuring is een manier om meerdere waarden te extraheren uit een array en toe te kennen aan variabelen.</p>
 <pre class="editor" id="editor1">
 // Variabele declaraties
 // ophalen van eerste en tweede item uit een array
@@ -23,7 +23,7 @@ console.log(restpizzas); // Array(2) ["Spinach & Rocket", "Chicken & Bacon"]
 <pre class="editor" id="editor2">
 // cloning an array
 pizzas = ['Margherita', 'Mushroom', 'Spinach & Rocket'];
-const [ ...clonedPizzas ] = pizzas;
+const [...clonedPizzas ] = pizzas;
 console.log(clonedPizzas); // ['Margherita', 'Mushroom', 'Spinach & Rocket']
 
 // Destructuring Assignment
@@ -33,7 +33,7 @@ let pizza1, pizza2;
 console.log(pizza1); // Margherita
 console.log(pizza2); // Mushroom
 
-// default values
+// Default values
 pizzas = ['Margherita'];
 [pizza1, pizza2 = 'Mushrooms' ] = pizzas;
 console.log(pizza1); // Margherita

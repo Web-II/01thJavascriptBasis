@@ -7,6 +7,7 @@
     <li> Andere escape characters : \n (newline), \\(backslash),...</li>
     <li>+ operator : concateneren van 2 strings</li>
     <li>length property : aantal karakters in string</li>
+    <li>Meer over het String object op <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">Mozilla Reference String</a></li>
 </ul>
 <pre class="editor" id="editor1">
 const a = "some text"; //Simple Strings
@@ -22,7 +23,7 @@ console.log(b.length); // 9
 <p>Omzetting naar een string:</p>
 <ul>
     <li>toString()</li>
-    <li>String() : Een type-casting met String() roept infeite toString() aan. Eén verschil is dat String() ook
+    <li>String() : Een type-casting met String() roept infeite .toString() aan. Eén verschil is dat String() ook
         een null of undefined kan omzetten zonder fout te genereren:</li>
 </ul>
 <pre class="editor" id="editor2">
@@ -132,7 +133,7 @@ let naam = 'John';
 console.log('Hallo ' + naam); // 'Hallo John'
 console.log("Hallo " + naam);  // "Hallo John"
 console.log("De som van 1 + 2 is " + (1 + 2));  // De som van 1 + 2 is 3  
-console.log("Dear Mom,\nHope you are well.\nLove, your son")
+console.log("Dear Mom,\nHope you are well.\nLove, your son");
 </pre>
 <p>Sinds ES6 kan je ook backticks ` gebruiken in plaats van ' of ". Dit is bijzonder handig om dat je op die manier
     expressies kan opnemen in een string zonder die altijd te moeten sluiten en opnieuw openen.
@@ -174,6 +175,7 @@ console.log(`Hi, I'm ${name}! Call me "${nickname}".`);
 </pre>
     </div>
 </div>
+<!--
 <p>Oefening</p>
 <ul>
     <li>Één van de doelen van JavaScript is om dynamisch HTML code te genereren. Hieronder zie je een heel eenvoudig
@@ -191,7 +193,7 @@ console.log(`Hi, I'm ${name}! Call me "${nickname}".`);
 <pre class="editor" id="editor10">
 let name = "Wes";
 let city = "Hamilton";
-let bio = "Wes is a really cool guy that loves web development!"  
+let bio = "Wes is a really cool guy that loves web development!";  
 </pre>
 <p>
     <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening2" aria-expanded="false">
@@ -203,9 +205,8 @@ let bio = "Wes is a really cool guy that loves web development!"
         <pre class="editor" id="editor11">
 let name = "Wes";
 let city = "Hamilton";
-let bio = "Wes is a really cool guy that loves web development!"
-console.log(
-'<div class="person">\n<h2>' + name + '</h2>\n<p class="location">' + city + '</p>\n<p class="bio">' + bio + '</p>\n</div>');
+let bio = "Wes is a really cool guy that loves web development!";
+console.log('<div class="person">\n<h2>' + name + '</h2>\n<p class="location">' + city + '</p>\n<p class="bio">' + bio + '</p>\n</div>');
 console.log(
 `<div class="person">
 <h2>${name}</h2>
@@ -216,3 +217,4 @@ console.log(
 </pre>
     </div>
 </div>
+-->

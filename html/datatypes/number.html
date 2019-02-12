@@ -18,6 +18,8 @@
             <li>[digits][.digits][(E|e)[(+|-)]digits]</li>
             <li>Voorbeelden: 3.14; 2345.789; .33333333333333, 6.02e23</li>
             <li>Octaal: begint met O: 0377</li>
+            <li>Cijfers na de komma niet 100% juist</li>
+            <li>Accuraat tot 17 cijfers na de komma</li>
         </ul>
     </li>
     <li>Operatoren: +, -, *, /, %</li>
@@ -25,29 +27,12 @@
 <pre class="editor" id="editor1">
 const a = 1; // geheel getal
 console.log(typeof a); // number
-
 const b = 1.5; // kommagetal
-console.log(typeof b); // number
-
+console.log(typeof b); // numbe
 const c = 070; // integer (in octal) 
 const d = 0xffff; // integer (in hex)
 const e = 1.34e6; // Scientific Notation (1340000) 
 const f = 10.0; // geheel getal (optimization)  
-</pre>
-<ul>
-    <li>Alle getallen zijn floating point getallen</li>
-    <li>Er is geen apart integer type (in tegenstelling tot Java waar er verschillende datatypes zijn voor getallen)</li>
-    <li>Dit formaat is gevoelig voor afrondingsfouten</li>
-    <li>Integer literals
-        <ul>
-            <li>Cijfers na de komma niet 100% juist</li>
-            <li>Accuraat tot 17 cijfers na de komma</li>
-            <li>Octaal: begint met O: 0377</li>
-        </ul>
-    </li>
-</ul>
-<p>Enkele voorbeelden:</p>
-<pre class="editor" id="editor2">
 const i = 0.1;
 const j = 0.2;
 let z = i+j;
@@ -57,31 +42,10 @@ z = (i * 10 + j * 10)/10;
 console.log('z = ' + z);   
 console.log('Oplossing 2 --> Let op! z is van het type string');
 z = (i + j).toFixed(1);
-console.log('z = ' + z); 
+console.log('z = ' + z);
+console.log(typeof z); 
 </pre>
-<p>Oefening</p>
-<ul>
-    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
-        <pre>5 / 0;</pre>
-    </li>
-    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
-        <pre>5 / "bob";</pre>
-    </li>
-    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
-        <pre>6 / "2";</pre>
-    </li>
-    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
-        <pre>3 + "bob";</pre>
-    </li>
-    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
-        <pre>3 * "bob";</pre>
-    </li>
-</ul>
-<pre class="editor" id="editor3">
-
-
-</pre>
-<p>Speciale waarden en bijhorende functions</p>
+<p>Speciale waarden en bijhorende functions:</p>
 <ul>
     <li>NaN (Not a Number)
         <ul>
@@ -117,6 +81,29 @@ console.log(isFinite(123)); // true
 <p>Oefening</p>
 <ul>
     <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>5 / 0;</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>5 / "bob";</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>6 / "2";</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>3 + "bob";</pre>
+    </li>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
+        <pre>3 * "bob";</pre>
+    </li>
+</ul>
+<pre class="editor" id="editor3">
+
+
+</pre>
+
+<p>En ... nog een oefening</p>
+<ul>
+    <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
         <pre>NaN == NaN</pre>
     </li>
     <li>Wat is het resultaat van de volgende uitdrukking? Controleer via de console
@@ -130,7 +117,7 @@ console.log(isFinite(123)); // true
 
 
 </pre>
-<p>Functies voor Conversies</p>
+<p>Functies voor Conversies:</p>
 <ul>
     <li>parseInt(): converteert string naar geheel getal (eerste beduidende positie moet +,- of getal zijn)</li>
     <li>parseFloat() : converteert string naar floating point</li>
@@ -147,7 +134,7 @@ console.log(parseFloat('$12.34')); // NaN
 console.log(parseFloat('22.34.15')); // 22.34
 console.log(parseFloat('22.5')); // 22.5   
 </pre>
-<p>Het objecttype Number</p>
+<p>Het objecttype Number: </p>
 <ul>
     <li>Prototype voor een object van type number (zie later)</li>
     <li>Voegt gedrag toe aan de primitieve datatypes</li>
@@ -166,6 +153,7 @@ console.log(parseFloat('22.5')); // 22.5
             <li>Number.NaN : idem als Nan, maar Property van Number</li>
         </ul>
     </li>
+    <li>Meer op <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Mozilla Reference Number</a></li>
 </ul>
 <pre class="editor" id="editor7">
 console.log(12345.6789.toFixed(1)); // "12345.7"
@@ -175,14 +163,14 @@ console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
 console.log(Number.POSITIVE_INFINITY); // Infinity
 console.log(Number.NEGATIVE_INFINITY); // -Infinity  
 </pre>
-<p>Math object voor berekeningen</p>
+<p>Math object voor berekeningen:  </p>
 <ul>
     <li>is een ingebouwd object, een JavaScript base class</li>
     <li>Bevat enkel static properties en methods</li>
     <li>Math.round(), Math.trunc() : afronden of afkappen</li>
     <li>Math.max(), Math.min() : grootste/kleinste getal</li>
     <li>Math.random() : pseudo random getal tussen 0 (incl) en 1(excl)</li>
-    <li>Meer op https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math</li>
+    <li>Meer op <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Mozilla Reference Math</a></li>
 </ul>
 <pre class="editor" id="editor8">
 console.log(Math.round(200.6)); // 201
