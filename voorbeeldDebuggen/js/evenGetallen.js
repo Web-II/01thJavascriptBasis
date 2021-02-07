@@ -7,8 +7,8 @@ let som = 0;
 for (let teller = 0; teller <= 20; teller++) {
   if (teller % 2 === 0) {
     message += `${teller} `;
-    som *= teller;
+    som += teller;
   }
 }
 
-console.log(message + `\nDe som van deze getallen is ${som}.`;)
+console.log(message + `\nDe som van deze getallen is ${som}.`);
