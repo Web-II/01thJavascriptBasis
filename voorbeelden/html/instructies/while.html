@@ -1,0 +1,69 @@
+<h2>Instructies</h2>
+<h4>while / do while</h4>
+<p>while</p>
+<pre class="editor" id="editor1">
+let scoops = 10;
+while (scoops > 0) {
+   console.log('More icecream!');
+   scoops--;
+}
+console.log("life without ice cream isn't the same");
+</pre>
+<p>do while</p>
+<pre class="editor" id="editor2">        
+do {
+   console.log('More icecream!');
+   scoops++;
+} while (scoops < 10);
+console.log(':)');   
+</pre>
+<p>Oefening</p>
+<ul>
+    <li>Wat is de laatste waarde van de volgende code? Probeer vervolgens uit.
+        <pre>
+let i = 0;
+while (++i < 5) console.log( i );
+        </pre>
+    </li>
+    <li>Wat is de laatste waarde van de volgende code? Probeer vervolgens uit.
+        <pre>
+let i = 0;
+while (i++ < 5) console.log( i );
+        </pre>
+    </li>
+    <li>Schrijf een lus die aan de gebruiker een getal groter dan 100 vraagt.
+        De vraag wordt herhaald tot de gebruiker een getal groter dan 100 ingeeft, het tekstvak leeg laat of het
+        venstertje sluit.
+        Voor de eenvoud gaan we ervan uit dat de gebruiker enkel getallen ingeeft.
+    </li>
+    <!--
+    <li>Vervang de for - lus door een while lus
+        <pre>
+for (let i = 0; i < 3; i++) {
+    console.log(`number ${i}!`);
+}
+        </pre>
+    </li>
+-->
+</ul>
+<pre class="editor" id="editor3">
+
+
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening1" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening1">
+    <div class="card card-body">
+        <pre class="editor" id="editor4">
+let num;
+
+do {
+    num = prompt("Enter a number greater than 100?", 0);
+} while (num <= 100 && num);
+</pre>
+    </div>
+</div>

@@ -1,0 +1,168 @@
+<h2>Instructies</h2>
+<h4>Operatoren</h4>
+<p><b>Berekeningsoperatoren</b>: +, -, *, /, %, ++, --, unary -, unary +, ** (macht)</p>
+<p><b>Toewijzingsoperatoren</b>: =, *=, /=, %=, +=, -=, <<=,>>=, >>>=, &=, ^=, |=</p>
+<p><b>Vergelijkingsoperatoren</b>: ==, !=, ===, !==, >, >=, <, <=</p> <p><b>Logische operatoren</b>: && (AND), || (OR),
+        ! (NOT)</p>
+<p><b>String operatoren</b>: + en +=</p>
+<p><b>Conditionele operatoren</b>: condition ? ifTrue : ifFalse</p>
+<p>Meer op <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" target="_blank">Mozilla
+        Reference Operators</a></p>
+<p>Oefening</p>
+<ul>
+    <li>Wat wordt er weggeschreven naar de console?
+        <pre>
+console.log(2 ** 4);
+</pre>
+    </li>
+    <li>Wat is de finale waarde van counter?
+        <pre>
+let counter = 1;
+console.log(2 * ++counter);
+</pre>
+    </li>
+
+    <li>Wat zijn de finale waarden van a, b, c en d?
+        <pre>
+let a = 1, b = 1;
+let c = ++a; 
+let d = b++; 
+console.log(`${a} ${b} ${c} ${d}`);
+</pre>
+    </li>
+    <li>Wat zijn de finale waarden van a en x?
+        <pre>
+let a = 2;
+let x = 1 + (a *= 2);
+</pre>
+    </li>
+    <li>Wat is de finale waarden van n?
+        <pre>
+let n = 2;
+n += 5;
+n *= 2;
+</pre>
+    </li>
+    <li>Herschrijf de volgende code gebruik makend van ? :
+        <pre>
+let a, b = 3;
+let result;
+if (a + b < 4) {
+    result = 'Below';
+} else {
+    result = 'Over';
+}  
+console.log(result);  
+</pre>
+    </li>
+    <li>Herschrijf de volgende code gebruik makend van ? :
+        <pre>
+let login = 'Director';
+let message;
+
+if (login == 'Employee') {
+    message = 'Hello';
+} else if (login == 'Director') {
+    message = 'Greetings';
+} else if (login == '') {
+    message = 'No login';
+} else {
+    message = '';
+} 
+console.log(message);
+</pre>
+    </li>
+</ul>
+<pre class="editor" id="editor1">
+
+
+</pre>
+<p>Vergelijkingsoperatoren</p>
+<ul>
+    <li>== of ===</li>
+    <li>!= of !==</li>
+    <li>
+        <</li> <li>>
+    </li>
+    <li>
+        <=</li> <li>>=
+    </li>
+</ul>
+<p>Welke gebruiken, == of === ?</p>
+<ul>
+    <li>== of != --> Het type wordt <b>niet</b> gecontroleerd. Impliciete type conversie.</li>
+</ul>
+<pre class="editor" id="editor2">
+console.log('hello' == 'hello'); // true
+console.log(1 == 1); // true 
+console.log(1 == '1'); // true 
+console.log(1 == true); //true
+</pre>
+<ul>
+    <li>=== of !== --> Het type wordt <b>wel</b> gecontroleerd. Geen impliciete type conversie. Gebruik zo vaak
+        mogelijk
+        ===</li>
+</ul>
+<pre class="editor" id="editor3">
+console.log('hello' === 'hello'); // true
+console.log(1 == 1); // true 
+console.log(1 === '1'); // false 
+console.log(1 === true); // false
+console.log(1 === 1.000000000000001); // false 
+console.log(1 === 1.0000000000000001); // true  
+</pre>
+<p>Logische operatoren: && (AND), || (OR), ! (NOT)</p>
+
+<p>Oefening</p>
+<ul>
+    <li>Wat zal het resultaat zijn?
+    <pre>
+let currentUser = null;
+let defaultUser = "John";
+let name = currentUser || defaultUser || "unnamed";
+console.log(name);
+    </pre>
+    </li>
+    <li>Wat zal het resultaat zijn?
+        <pre>
+console.log(null || 2 && 3 || 4);
+</pre>
+    </li>
+    <li>Wat zal het resultaat zijn?
+        <pre>
+if (-1 || 0) console.log('first');
+if (-1 && 0) console.log('second');
+if (null || -1 && 1) console.log('third');
+</pre>
+</li>
+        <pre class="editor" id="editor6">
+
+
+    </pre>
+    
+
+    <li>Als het voor 10 uur of na 18 uur of weekend is, moet er komen "Office closed"</li>
+<li>
+<pre class="editor" id="editor4">
+
+
+</pre>
+</li>
+</ul>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening1" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening1">
+    <div class="card card-body">
+        <pre class="editor" id="editor5">
+let date = new Date();
+let hour = date.getHours();
+let isWeekend = date.getDay() === 0 || date.getDay() === 1;
+if (hour < 10 || hour > 18 || isWeekend){
+    console.log("Office closed");
+}
+    </pre>
+    </div>
+</div>

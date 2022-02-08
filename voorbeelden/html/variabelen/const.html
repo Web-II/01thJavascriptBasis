@@ -1,0 +1,43 @@
+<h2>Variabelen</h2>
+<h4>const</h4>
+<p>Een constante krijgt bij de creatie onmiddellijk een VASTE waarde die niet meer kan worden gewijzigd.</p>
+<p>Er wordt gebruik gemaakt van het sleutelwoord <b>const</b> om een constante te declareren.</p>
+<pre><code>const constanteNaam = constante waarde;</code></pre>
+<p>Je geeft geen type op bij de declaratie van een constante. Het type is afhankelijk van de toegekende
+    waarde en wordt door JavaScript zelf afgeleid.</p>
+<p>Het toekennen van een nieuwe waarde is niet toegestaan! Muteren is wel mogelijk (object), waarover
+    later meer.</p>
+<p>Er geldt <b>block</b> scope. Een block wordt gedefinieerd door { }.</p>
+<p>Een aantal voorbeelden:</p>
+<pre class="editor" id="editor1">
+const interest = 0.15;
+const saldo = 2000;
+const interestPerJaar = saldo * intrest;
+console.log(interestPerJaar);
+interestPerJaar = 400;   // fout: Assignment to constant variable
+</pre>
+<pre class="editor" id="editor1">
+const total;    // fout: Missing initializer in const declaration
+</pre>
+<p>Oefening</p>
+<ul>
+    <li>De prijs van een product is 200 euro, de korting is 10%. Print de prijs na korting.</li>
+</ul>
+<pre class="editor" id="editor2">
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening1" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening1">
+    <div class="card card-body">
+        <pre class="editor" id="editor3">
+const prijs = 200;
+const korting = 0.1;
+let prijsMinKorting = prijs - prijs * korting;
+console.log(prijsMinKorting);
+        </pre>
+    </div>
+</div>

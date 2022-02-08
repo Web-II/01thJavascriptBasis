@@ -1,0 +1,50 @@
+<h2>Variabelen</h2>
+<h4>let</h4>
+<p>Er wordt gebruik gemaakt van het sleutelwoord <b>let</b> om een variabele te declareren:</p>
+<pre><code>let variabeleNaam = initiële waarde;</code></pre>
+<p>Je geeft geen type op bij de declaratie van een variabele. Dit betekent niet dat de variabele geen
+    type heeft. JavaScript bepaalt op basis van de inhoud het type.</p>
+<p>Er geldt <b>block</b> scope. Een block wordt gedefinieerd door { }.</p>
+<p>Een aantal voorbeelden:</p>
+<pre id="editor1" class="editor">
+let getal;  
+console.log(typeof getal);  // type is undefined
+getal = 200;
+console.log(typeof getal);  // type is number
+getal = 10.5;
+console.log(typeof getal);  // type is number
+getal = 'nu ben ik plots een string';
+console.log(typeof getal);  // type is string  
+let naam = 'John';   // declaratie en initialisatie in 1 keer  
+console.log(naam);  
+let tekst = 'va' + 'kan' + 'tie' + '!!!';    // concatenatie
+console.log(tekst);
+let jaar = 2019, maand = 1, dag = 14;
+console.log(jaar);      
+</pre>
+<p>Oefening</p>
+<ul>
+    <li>Creeer een variabele met de naam van onze planeet en schrijf deze naar de console</li>
+    <li>Creeer een variabele die het huidige aantal bezoekers van de website bijhoudt en schrijf deze
+        naar de console</li>
+</ul>
+<pre id="editor2" class="editor">
+
+
+
+</pre>
+<p>
+    <button class="btn bg-light text-dark" type="button" data-toggle="collapse" data-target="#oefening1" aria-expanded="false">
+        Oplossing
+    </button>
+</p>
+<div class="collapse" id="oefening1">
+    <div class="card card-body">
+        <pre id="editor3" class="editor">
+let onzePlaneet = 'Aarde';
+console.log(onzePlaneet);
+let huidigAantalBezoekers = 5;
+console.log(huidigAantalBezoekers);
+        </pre>
+</div>
+</div>
