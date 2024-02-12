@@ -1,6 +1,20 @@
 'use strict';
+/* //dynamically typed
+let dynamisch;
+console.log('type van variabele dynamisch na declaratie ' + typeof dynamisch);
+dynamisch=5;
+console.log('type van variabele dynamisch na toekennen waarde 5 ' + typeof dynamisch);
+dynamisch='hello';
+console.log('type van variabele dynamisch na toekennen waarde hello ' + typeof dynamisch);
 
-/* //number
+//loosely typed
+const calculation = 10 + true + false;
+const message = 'abc' + calculation + undefined;
+
+console.log('calculation: ' + calculation);
+console.log('message: ' + message);
+
+//number
 let three = 3; console.log(three);
 let minus20 = -20;console.log(minus20);
 let fiveMillion = 5000000;console.log(fiveMillion);
